@@ -2,15 +2,18 @@
 
 namespace DependencyInjection
 {
+    public interface IPerson
+    {
 
-    class Person
+    }
+    class Person:IPerson
     {
         public string Name { get; set; }
         public string FatherName { get; set; }
-        public Address Address { get; set; }
+        public IAddress Address { get; set; }
         public Person(IAddress address)
         {
-          //  Address = address ?? throw new ArgumentNullException(nameof(address));
+            Address = address;
         }
 
     }

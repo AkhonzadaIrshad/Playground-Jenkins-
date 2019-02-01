@@ -1,7 +1,11 @@
 ﻿namespace DependencyInjection
 {
-    public class Country
+    public class Country:ICountry
     {
         public string Name { get; set; }
+    }
+
+    public interface ICountry
+    {
     }
 }

@@ -1,17 +1,29 @@
-﻿namespace DependencyInjection
+﻿using System;
+
+namespace DependencyInjection
 {
-    public class IAddress
+    public interface IAddress
     {
-        
+        void Show();
+        void Set(string street);
+
     }
 
     public class Address:IAddress
     {
         public string Street { get; set; }
-        public City City { get; set; }
-        public Address(City city)
+        public ICity City { get; set; }
+        public Address(ICity city)
         {
             City = city;
+        }
+        public void Set(string street)
+        {
+            Street = street;
+        }
+        public void Show()
+        {
+            Console.WriteLine(Street);
         }
     }
 }

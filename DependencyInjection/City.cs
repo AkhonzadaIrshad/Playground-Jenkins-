@@ -1,12 +1,16 @@
 ﻿namespace DependencyInjection
 {
-    public class City
+    public class City:ICity
     {
         public string Name { get; set; }
-        public Country Country { get; set; }
-        public City(Country country)
+        public ICountry Country { get; set; }
+        public City(ICountry country)
         {
             Country = country;
         }
+    }
+
+    public interface ICity
+    {
     }
 }
